@@ -2,16 +2,17 @@
 using Prism;
 using Prism.Ioc;
 using UIKit;
-
+using XamarinMultiTenant.Common;
 
 namespace XamarinMultiTenant.iOS.Core
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
     // User Interface of the application, as well as listening (and optionally responding) to 
     // application events from iOS.
-    [Register("AppDelegate")]
-    public partial class AppDelegateBase : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
+    public abstract partial class AppDelegateBase : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
     {
+        protected abstract ITenant Tenant { get;  }
+
         //
         // This method is invoked when the application has loaded and is ready to run. In this 
         // method you should instantiate the window, load the UI into it and then make the window
@@ -22,7 +23,7 @@ namespace XamarinMultiTenant.iOS.Core
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App(new iOSInitializer()));
+            LoadApplication(new App(new iOSInitializer(Tenant)));
 
             return base.FinishedLaunching(app, options);
         }
@@ -30,9 +31,16 @@ namespace XamarinMultiTenant.iOS.Core
 
     public class iOSInitializer : IPlatformInitializer
     {
+        private readonly ITenant tenant;
+
+        public iOSInitializer(ITenant tenant)
+        {
+            this.tenant = tenant;
+        }
+
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            // Register any platform specific implementations
+            containerRegistry.RegisterInstance<ITenant>(tenant);
         }
     }
 }
