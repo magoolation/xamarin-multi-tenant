@@ -7,11 +7,11 @@ using Prism.Ioc;
 using XamarinMultiTenant.Android.Core;
 using XamarinMultiTenant.Common;
 
-namespace XamarinMultiTenant.Droid
+namespace XamarinMultiTenant.Android.TenantB
 {
     [Activity(Label = "XamarinMultiTenant", Icon = "@mipmap/ic_launcher", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : MainActivityBase
     {
-        protected  override ITenant Tenant => Tenants.TenantA.GetTenant();
+        protected override ITenant Tenant => Tenants.TenantB.GetTenant();
     }
 }

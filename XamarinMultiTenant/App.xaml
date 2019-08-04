@@ -5,7 +5,9 @@
              x:Class="XamarinMultiTenant.App">
 	<Application.Resources>
 
-		<!-- Application resource dictionary -->
+        <Color x:Key="BackgroundColor">GhostWhite</Color>
+        <Color x:Key="PrimaryColor">#ff8833</Color>
+        <Color x:Key="SecondaryColor">White</Color>
 
-	</Application.Resources>
+    </Application.Resources>
 </prism:PrismApplication>

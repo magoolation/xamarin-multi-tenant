@@ -4,8 +4,12 @@
              x:Class="XamarinMultiTenant.Views.MainPage"
              Title="{Binding Title}">
 
-    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Welcome to Xamarin Forms and Prism!" />
-    </StackLayout>
+    <FlexLayout Direction="Column" BackgroundColor="{StaticResource BackgroundColor}" AlignItems="Center" AlignContent="Center" Padding="20">
+        <Frame BackgroundColor="{StaticResource PrimaryColor}" HeightRequest="20" FlexLayout.AlignSelf="Stretch" AutomationProperties.IsInAccessibleTree="true">
+            <Label TextColor="{StaticResource SecondaryColor}" Text="{Binding Tenant}" />
+        </Frame>
+        <Label Text="Welcome to Xamarin Forms and Prism!" FlexLayout.Grow="1" />
+        <Button Text="Open" BackgroundColor="{StaticResource PrimaryColor}" TextColor="{StaticResource SecondaryColor}" FlexLayout.AlignSelf="Stretch" Command="{Binding GoCommand}" />
+    </FlexLayout>
 
 </ContentPage>
