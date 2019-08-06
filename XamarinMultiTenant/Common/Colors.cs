@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Text;
+﻿using System.Drawing;
 
 namespace XamarinMultiTenant.Common
 {
     public static class Colors
     {
         public static Color White => Color.White;
-            public static Color BackgroundWhite => Color.GhostWhite;
+        public static Color BackgroundWhite => Color.GhostWhite;
 
         public static Color Green => Color.LightSeaGreen;
         public static Color Blue => Color.DeepSkyBlue;

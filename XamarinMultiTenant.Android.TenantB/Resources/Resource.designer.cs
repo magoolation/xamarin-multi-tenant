@@ -5679,6 +5679,7 @@ namespace XamarinMultiTenant.Android.TenantB
 			global::XamarinMultiTenant.Android.Core.Resource.Styleable.View_paddingEnd = global::XamarinMultiTenant.Android.TenantB.Resource.Styleable.View_paddingEnd;
 			global::XamarinMultiTenant.Android.Core.Resource.Styleable.View_paddingStart = global::XamarinMultiTenant.Android.TenantB.Resource.Styleable.View_paddingStart;
 			global::XamarinMultiTenant.Android.Core.Resource.Styleable.View_theme = global::XamarinMultiTenant.Android.TenantB.Resource.Styleable.View_theme;
+			global::XamarinMultiTenant.Android.Core.Resource.Xml.xamarin_essentials_fileprovider_file_paths = global::XamarinMultiTenant.Android.TenantB.Resource.Xml.xamarin_essentials_fileprovider_file_paths;
 		}
 		
 		public partial class Animation

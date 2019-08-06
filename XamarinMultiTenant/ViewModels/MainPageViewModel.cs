@@ -1,11 +1,7 @@
-﻿using Prism.Commands;
-using Prism.Mvvm;
-using Prism.Navigation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System;
 using System.Windows.Input;
+using Prism.Commands;
+using Prism.Navigation;
 using Xamarin.Forms;
 using XamarinMultiTenant.Common;
 
@@ -26,10 +22,10 @@ namespace XamarinMultiTenant.ViewModels
 
         private void GoClick()
         {
-            Device.OpenUri(new Uri(this.tenant.Url));
+            Device.OpenUri(new Uri(tenant.Url));
         }
 
-        public string Tenant => this.tenant.Name;
+        public string Tenant => tenant.Name;
         public ICommand GoCommand { get; }
     }
 }

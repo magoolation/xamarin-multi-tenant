@@ -1,5 +1,4 @@
-﻿using Android.App;
-using Android.Content.PM;
+﻿using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
 using Prism;
@@ -9,9 +8,9 @@ using XamarinMultiTenant.Common;
 namespace XamarinMultiTenant.Android.Core
 {
     //[Activity(Label = "XamarinMultiTenant", Icon = "@mipmap/ic_launcher", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public abstract class MainActivityBase: global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+    public abstract class MainActivityBase : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
-        protected abstract ITenant Tenant { get;  }
+        protected abstract ITenant Tenant { get; }
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -40,14 +39,14 @@ namespace XamarinMultiTenant.Android.Core
     {
         private readonly ITenant tenant;
 
-        public AndroidInitializer(ITenant tenant): base()
+        public AndroidInitializer(ITenant tenant) : base()
         {
             this.tenant = tenant;
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterInstance<ITenant>(this.tenant);
+            containerRegistry.RegisterInstance<ITenant>(tenant);
         }
     }
 }

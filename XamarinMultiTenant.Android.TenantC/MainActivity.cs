@@ -1,7 +1,5 @@
 ﻿using Android.App;
 using Android.Content.PM;
-using Android.OS;
-using Android.Views;
 using XamarinMultiTenant.Android.Core;
 using XamarinMultiTenant.Common;
 
