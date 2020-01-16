@@ -20,7 +20,7 @@ jobs:
       run: |
         cd ..
         ls
-        
+      
   Android:
     runs-on: macos-latest
     steps:
@@ -28,8 +28,7 @@ jobs:
     - name: Android
       run: |
         nuget restore
-        cd XamarinMultiTenant.Android
-        msbuild XamarinMultiTenant.Android.csproj /verbosity:normal /t:Rebuild /p:Configuration=Debug
+        msbuild /m XamarinMultiTenant.sln /verbosity:normal /t:Rebuild /p:Configuration=Debug "/p:Platform=Any CPU"
         
   iOS:
     runs-on: macos-latest
