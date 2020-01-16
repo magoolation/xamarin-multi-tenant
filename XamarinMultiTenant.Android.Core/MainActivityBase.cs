@@ -24,6 +24,7 @@ namespace XamarinMultiTenant.Android.Core
             Xamarin.Essentials.Platform.Init(this, bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            global::Xamarin.Forms.FormsMaterial.Init(this, bundle);
             LoadApplication(new App(new AndroidInitializer(Tenant)));
         }
 
