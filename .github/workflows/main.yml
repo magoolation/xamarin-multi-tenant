@@ -38,4 +38,4 @@ jobs:
     - name: iOS
       run: |
         nuget restore
-        msbuild XamarinMultiTenant.iOS/XamarinMultiTenant.iOS.csproj /verbosity:normal /t:Rebuild /p:Platform=iPhoneSimulator /p:Configuration=Debug
+        msbuild /m XamarinMultiTenant.sln /verbosity:normal /t:Rebuild /p:Platform=iPhoneSimulator /p:Configuration=Debug
